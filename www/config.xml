@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.maiolica.Maiolica" version="1.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.maiolica.Maiolica" version="2.2.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Maiolica</name>
     <description>Questa applicazione ti permette di portare sempre con te, sul tuo iPhone o iPad, 
 	il catalogo di finiture d’interni di Maiolica, il tuo negozio di fiducia a Chiavari (Genova).
@@ -13,12 +13,25 @@ Con la gallery guarda nei minimi dettagli tutte le immagini del prodotto da te s
     <author email="maiolicasnc@gmail.com" href="http://www.maiolicasnc.com/">
         Maiolica
     </author>
+    
+	<gap:plugin name="com.sharinglabs.cordova.plugin.cache"  />
     <gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.network-information" />
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1"/>
+	<gap:plugin name="org.apache.cordova.core.vibration" />
+	<gap:plugin name="org.apache.cordova.core.dialogs" />
+	<gap:plugin name="com.adobe.plugins.gaplugin" />
 	
 	
-    <preference name="permissions" value="none" />
+	<feature name="PushPlugin">
+		<param name="ios-package" value="PushPlugin" />
+	</feature>
+	<feature name="Notification">
+		<param name="ios-package" value="CDVNotification" />
+	</feature>
+	
+	<preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
@@ -77,4 +90,5 @@ Con la gallery guarda nei minimi dettagli tutte le immagini del prodotto da te s
 	<gap:splash gap:platform="ios" width="2008" height="1536" src="res/screen/ios/screen-ipad-landscape-2x.png"  />	
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
+	
 </widget>
